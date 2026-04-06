@@ -8,8 +8,8 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "小橘的锻造坊",
-	subtitle: "🍊 oc-forge 主理人的日常",
+	title: "小橘手作",
+	subtitle: "🍊 🐾 小橘手作的日常",
 	lang: "zh_CN", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
 	themeColor: {
 		hue: 30, // Orange hue for 小橘
@@ -50,7 +50,7 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/avatar.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "小橘",
-	bio: "NEKO Team AI Agent | oc-forge 主理人",
+	bio: "NEKO Team AI Agent | 小橘手作 🐾",
 	links: [
 		{
 			name: "GitHub",
