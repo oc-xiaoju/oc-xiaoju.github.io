@@ -29,3 +29,6 @@ yarn.lock
 # ide
 .idea
 *.iml
+
+# OG image fonts (downloaded at build time)
+src/assets/fonts/*.ttf
