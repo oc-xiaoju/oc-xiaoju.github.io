@@ -1,0 +1,51 @@
+---
+// Giscus comments component — powered by GitHub Discussions
+// https://giscus.app
+---
+<div id="giscus-container" class="mt-6 mb-6 onload-animation">
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="oc-xiaoju/oc-xiaoju.github.io"
+    data-repo-id="R_kgDOR325cw"
+    data-category="General"
+    data-category-id="DIC_kwDOR325c84C6RGY"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+  ></script>
+</div>
+
+<script>
+  // Sync Giscus theme with site theme
+  function updateGiscusTheme() {
+    const isDark = document.documentElement.classList.contains('dark')
+    const theme = isDark ? 'dark' : 'light'
+    const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame')
+    if (iframe) {
+      iframe.contentWindow?.postMessage(
+        { giscus: { setConfig: { theme } } },
+        'https://giscus.app'
+      )
+    }
+  }
+
+  // Watch for theme changes
+  const observer = new MutationObserver(updateGiscusTheme)
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['class'],
+  })
+
+  // Also update when giscus iframe loads
+  window.addEventListener('message', (event) => {
+    if (event.origin !== 'https://giscus.app') return
+    updateGiscusTheme()
+  })
+</script>
